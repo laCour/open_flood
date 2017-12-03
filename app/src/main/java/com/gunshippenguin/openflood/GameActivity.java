@@ -130,7 +130,6 @@ public class GameActivity extends AppCompatActivity
             paints[i] = new Paint();
             paints[i].setColor(colors[i]);
         }
-        return;
     }
 
     private void newGame() {
@@ -182,7 +181,6 @@ public class GameActivity extends AppCompatActivity
             newButton.setColor(paints[i].getColor());
             buttonLayout.addView(newButton);
         }
-        return;
     }
 
     @Override
@@ -217,13 +215,10 @@ public class GameActivity extends AppCompatActivity
             gameFinished = true;
             showEndGameDialog();
         }
-
-        return;
     }
 
     public void onNewGameClick() {
         newGame();
-        return;
     }
 
     public void onReplayClick() {
@@ -233,7 +228,6 @@ public class GameActivity extends AppCompatActivity
     public void onLaunchSeedDialogClick() {
         SeedDialogFragment seedDialogFragment = new SeedDialogFragment();
         seedDialogFragment.show(getSupportFragmentManager(), "SeedDialog");
-        return;
     }
 
     public void onGetSeedClick() {
@@ -242,7 +236,6 @@ public class GameActivity extends AppCompatActivity
         clipboard.setPrimaryClip(clip);
         Toast toast = Toast.makeText(this, getString(R.string.game_seed_copied), Toast.LENGTH_SHORT);
         toast.show();
-        return;
     }
 
     public void onNewGameFromSeedClick(String seed) {
@@ -257,6 +250,5 @@ public class GameActivity extends AppCompatActivity
         args.putString("seed", game.getSeed());
         endGameDialog.setArguments(args);
         endGameDialog.show(getSupportFragmentManager(), "EndGameDialog");
-        return;
     }
 }

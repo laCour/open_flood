@@ -32,7 +32,6 @@ public class FloodView extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         setDrawingInfo();
-        return;
     }
 
     private void setDrawingInfo(){
@@ -50,25 +49,21 @@ public class FloodView extends View {
             yOffset = (getHeight() - dimension) / 2 ;
             textPaint.setTextSize(cellSize);
         }
-        return;
     }
 
     public void setBoardSize(int boardSize) {
         this.boardSize = boardSize;
         setDrawingInfo();
-        return;
     }
 
     public void drawGame(Game game) {
         gameToDraw = game;
         invalidate();
-        return;
     }
 
     public void setPaints(Paint[] paints) {
         this.paints = paints;
         invalidate();
-        return;
     }
 
     @Override
@@ -100,6 +95,5 @@ public class FloodView extends View {
                 }
             }
         }
-        return;
     }
 }

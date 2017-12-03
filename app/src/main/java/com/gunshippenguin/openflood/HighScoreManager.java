@@ -35,7 +35,6 @@ public class HighScoreManager {
         SharedPreferences.Editor editor = sp.edit();
         editor.remove(getKey(boardSize, numColors));
         editor.apply();
-        return;
     }
 
     private String getKey(int boardSize, int numColors) {

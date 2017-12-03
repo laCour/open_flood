@@ -55,7 +55,5 @@ public class InfoActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-        return;
     }
 }

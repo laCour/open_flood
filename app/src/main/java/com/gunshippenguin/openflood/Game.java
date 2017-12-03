@@ -80,7 +80,6 @@ public class Game {
                 board[y][x] = r.nextInt(numColors);
             }
         }
-        return;
     }
 
     public void flood(int replacementColor) {
@@ -118,7 +117,6 @@ public class Game {
             }
         }
         steps++;
-        return;
     }
 
     public boolean checkWin() {
