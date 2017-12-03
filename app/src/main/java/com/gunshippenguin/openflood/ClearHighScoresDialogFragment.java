@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class ClearHighScoresDialogFragment extends DialogFragment {
-
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View dialogView = inflater.inflate(R.layout.dialog_highscores_clear, null);

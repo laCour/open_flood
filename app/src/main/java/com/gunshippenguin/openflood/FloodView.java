@@ -30,7 +30,7 @@ public class FloodView extends View {
     }
 
     @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+    protected void onSizeChanged(int w, int h, int oldW, int oldH) {
         setDrawingInfo();
     }
 

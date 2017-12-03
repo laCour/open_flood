@@ -16,7 +16,7 @@
 
     <!-- Seed Dialog -->
     <string name="seed_dialog_title">Nouveau jeu à partir d\'une seed</string>
-    <string name="seed_dialog_edittext_prefix">Seed :</string>
+    <string name="seed_dialog_edit_text_prefix">Seed :</string>
     <string name="seed_dialog_start">Commencer</string>
     <string name="seed_dialog_cancel">Annuler</string>
 

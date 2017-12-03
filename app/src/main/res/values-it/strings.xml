@@ -16,7 +16,7 @@
 
     <!-- Seed Dialog -->
     <string name="seed_dialog_title">Nuova partita da seme</string>
-    <string name="seed_dialog_edittext_prefix">Seme:</string>
+    <string name="seed_dialog_edit_text_prefix">Seme:</string>
     <string name="seed_dialog_start">Inizia</string>
     <string name="seed_dialog_cancel">Annulla</string>
 

@@ -16,7 +16,7 @@
 
     <!-- Seed Dialog -->
     <string name="seed_dialog_title">Nowa gra z zalążka</string>
-    <string name="seed_dialog_edittext_prefix">Zalążek:</string>
+    <string name="seed_dialog_edit_text_prefix">Zalążek:</string>
     <string name="seed_dialog_start">Start</string>
     <string name="seed_dialog_cancel">Anuluj</string>
 

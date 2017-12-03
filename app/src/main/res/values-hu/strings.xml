@@ -16,7 +16,7 @@
 
     <!-- Seed Dialog -->
     <string name="seed_dialog_title">Új játék seed-ből</string>
-    <string name="seed_dialog_edittext_prefix">Seed:</string>
+    <string name="seed_dialog_edit_text_prefix">Seed:</string>
     <string name="seed_dialog_start">Start</string>
     <string name="seed_dialog_cancel">Mégse</string>
 

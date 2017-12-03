@@ -23,7 +23,6 @@ import android.widget.Toast;
 public class GameActivity extends AppCompatActivity
         implements EndGameDialogFragment.EndGameDialogFragmentListener,
         SeedDialogFragment.SeedDialogFragmentListener {
-
     private final int UPDATE_SETTINGS = 1;
 
     private Game game;

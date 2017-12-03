@@ -16,7 +16,7 @@
 
     <!-- Seed Dialog -->
     <string name="seed_dialog_title">Nova ludo de tabulĝermo</string>
-    <string name="seed_dialog_edittext_prefix">Tabulĝermo:</string>
+    <string name="seed_dialog_edit_text_prefix">Tabulĝermo:</string>
     <string name="seed_dialog_start">Ekigi</string>
     <string name="seed_dialog_cancel">Nuligi</string>
 

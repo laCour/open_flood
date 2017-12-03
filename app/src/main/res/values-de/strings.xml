@@ -16,7 +16,7 @@
 
     <!-- Seed Dialog -->
     <string name="seed_dialog_title">Neues Spiel nach Saatwert</string>
-    <string name="seed_dialog_edittext_prefix">Saatwert:</string>
+    <string name="seed_dialog_edit_text_prefix">Saatwert:</string>
     <string name="seed_dialog_start">Starten</string>
     <string name="seed_dialog_cancel">Abbrechen</string>
 

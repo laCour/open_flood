@@ -28,7 +28,6 @@ import static org.hamcrest.Matchers.is;
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class SettingsTest {
-
     private static Matcher<View> nthChildOf(final Matcher<View> parentMatcher, final int childPosition) {
         return new TypeSafeMatcher<View>() {
             @Override
@@ -126,5 +125,4 @@ public class SettingsTest {
         clickColorButton(6);
         clickColorButton(7);
     }
-
 }

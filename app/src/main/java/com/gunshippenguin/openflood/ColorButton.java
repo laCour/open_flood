@@ -15,7 +15,6 @@ public class ColorButton extends View {
     Paint textPaint;
     Drawable buttonDrawable;
 
-
     public ColorButton(Context context) {
         super(context);
         buttonDrawable = ContextCompat.getDrawable(getContext(), R.drawable.button);
@@ -34,7 +33,7 @@ public class ColorButton extends View {
     }
 
     @Override
-    public void onSizeChanged(int w, int h, int oldw, int oldh) {
+    public void onSizeChanged(int w, int h, int oldW, int oldH) {
         if (w > h) {
             textPaint.setTextSize(h);
         } else {

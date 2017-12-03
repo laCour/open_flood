@@ -21,7 +21,6 @@ import android.widget.TextView;
  * Dialog allowing the user to enter a seed to start a new game from.
  */
 public class SeedDialogFragment extends DialogFragment {
-
     public interface SeedDialogFragmentListener {
         void onNewGameFromSeedClick(String seed);
     }

@@ -20,7 +20,6 @@ import android.preference.PreferenceManager;
  * Dialog Fragment that is displayed to the user upon a win or loss.
  */
 public class EndGameDialogFragment extends DialogFragment {
-
     public interface EndGameDialogFragmentListener {
         void onReplayClick();
         void onNewGameClick();
@@ -105,7 +104,7 @@ public class EndGameDialogFragment extends DialogFragment {
             }
         });
 
-        // Show the replay butotn if the game has been lost
+        // Show the replay button if the game has been lost
         Button replayButton = (Button) layout.findViewById(R.id.replayButton);
         if (gameWon) {
             replayButton.setVisibility(View.GONE);

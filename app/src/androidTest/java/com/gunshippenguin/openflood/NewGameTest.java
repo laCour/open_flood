@@ -23,7 +23,6 @@ import static org.hamcrest.Matchers.allOf;
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class NewGameTest {
-
     @Rule
     public ActivityTestRule<GameActivity> mActivityTestRule = new ActivityTestRule<>(GameActivity.class);
 
@@ -61,5 +60,4 @@ public class NewGameTest {
                 allOf(withId(R.id.startGameFromSeedButton), withText("Start"), isDisplayed()));
         startNewGameFromSeedButton.perform(click());
     }
-
 }
