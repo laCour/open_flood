@@ -23,7 +23,7 @@ import android.widget.TextView;
 public class SeedDialogFragment extends DialogFragment {
 
     public interface SeedDialogFragmentListener {
-        public void onNewGameFromSeedClick(String seed);
+        void onNewGameFromSeedClick(String seed);
     }
 
     SeedDialogFragmentListener listener;

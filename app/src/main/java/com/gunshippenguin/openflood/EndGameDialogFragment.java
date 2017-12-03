@@ -22,9 +22,9 @@ import android.preference.PreferenceManager;
 public class EndGameDialogFragment extends DialogFragment {
 
     public interface EndGameDialogFragmentListener {
-        public void onReplayClick();
-        public void onNewGameClick();
-        public void onGetSeedClick();
+        void onReplayClick();
+        void onNewGameClick();
+        void onGetSeedClick();
     }
 
     EndGameDialogFragmentListener listener;
