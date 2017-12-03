@@ -17,6 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 /**
  * Activity allowing the user to play the actual game.
  */
@@ -41,7 +43,6 @@ public class GameActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
@@ -94,8 +95,24 @@ public class GameActivity extends AppCompatActivity
         // Get the steps text view
         stepsTextView = (TextView) findViewById(R.id.stepsTextView);
 
-        // Set up a new game
-        newGame();
+        if (sp.contains("state_saved")) {
+            // Restore previous game
+            restoreGame();
+        } else {
+            // Set up a new game
+            newGame();
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        spEditor.putBoolean("state_saved", true);
+        spEditor.putString("state_board", new Gson().toJson(game.getBoard()));
+        spEditor.putInt("state_steps", game.getSteps());
+        spEditor.putString("state_seed", game.getSeed());
+        spEditor.apply();
     }
 
     private int getBoardSize(){
@@ -131,8 +148,7 @@ public class GameActivity extends AppCompatActivity
         }
     }
 
-    private void newGame() {
-        game = new Game(getBoardSize(), getNumColors());
+    private void initGame() {
         gameFinished = false;
         lastColor = game.getColor(0, 0);
 
@@ -143,16 +159,27 @@ public class GameActivity extends AppCompatActivity
         floodView.drawGame(game);
     }
 
+    private void newGame() {
+        game = new Game(getBoardSize(), getNumColors());
+        initGame();
+    }
+
     private void newGame(String seed) {
         game = new Game(getBoardSize(), getNumColors(), seed);
-        gameFinished = false;
-        lastColor = game.getColor(0, 0);
+        initGame();
+    }
 
-        layoutColorButtons();
+    private void restoreGame() {
+        int board[][] = new Gson().fromJson(sp.getString("state_board", null), int[][].class);
+        int steps = sp.getInt("state_steps", 0);
+        String seed = sp.getString("state_seed", null);
 
-        stepsTextView.setText(game.getSteps() + " / " + game.getMaxSteps());
-        floodView.setBoardSize(getBoardSize());
-        floodView.drawGame(game);
+        if (board == null || seed == null) {
+            newGame();
+        } else {
+            game = new Game(board, getBoardSize(), getNumColors(), steps, seed);
+            initGame();
+        }
     }
 
     private void layoutColorButtons() {
