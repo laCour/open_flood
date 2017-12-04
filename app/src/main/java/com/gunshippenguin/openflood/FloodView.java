@@ -18,6 +18,8 @@ public class FloodView extends View {
     private int cellSize;
     private int xOffset;
     private int yOffset;
+    private boolean colorBlind;
+    private Rect textRect;
     private Paint textPaint;
     private Paint paints[];
 
@@ -27,6 +29,12 @@ public class FloodView extends View {
         textPaint = new Paint();
         textPaint.setColor(Color.BLACK);
         textPaint.setTextAlign(Paint.Align.CENTER);
+
+        colorBlind = PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean("color_blind_mode", false);
+
+        if (colorBlind) {
+            textRect = new Rect();
+        }
     }
 
     @Override
@@ -81,16 +89,15 @@ public class FloodView extends View {
         }
 
         // Draw numbers if color blind mode is on
-        if (PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean("color_blind_mode", false)) {
+        if (colorBlind) {
             String numToDraw;
-            Rect currRect = new Rect();
             for (int y = 0; y < gameToDraw.getBoardDimensions(); y++) {
                 for (int x = 0; x < gameToDraw.getBoardDimensions(); x++) {
-                    currRect.set(x * cellSize + xOffset, y * cellSize + yOffset,
+                    textRect.set(x * cellSize + xOffset, y * cellSize + yOffset,
                             (x + 1) * cellSize + xOffset, (y + 1) * cellSize + yOffset);
                     numToDraw = Integer.toString(gameToDraw.getColor(x, y) + 1);
-                    c.drawText(numToDraw, currRect.centerX(),
-                            (int) (currRect.centerY() - ((textPaint.descent() + textPaint.ascent()) / 2)),
+                    c.drawText(numToDraw, textRect.centerX(),
+                            (int) (textRect.centerY() - ((textPaint.descent() + textPaint.ascent()) / 2)),
                             textPaint);
                 }
             }
