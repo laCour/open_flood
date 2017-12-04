@@ -45,11 +45,11 @@ public class Game {
 
     private String generateRandomSeed() {
         Random rand = new Random(System.currentTimeMillis());
-        String currSeed = "";
+        StringBuilder currSeed = new StringBuilder();
         for(int i=0;i<rand.nextInt((SEED_LENGTH_UPPER-SEED_LENGTH_LOWER)+1)+SEED_LENGTH_LOWER;i++) {
-            currSeed += SEED_CHARS.charAt(rand.nextInt(SEED_CHARS.length()));
+            currSeed.append(SEED_CHARS.charAt(rand.nextInt(SEED_CHARS.length())));
         }
-        return currSeed;
+        return currSeed.toString();
     }
 
     public int getColor(int x, int y) {
