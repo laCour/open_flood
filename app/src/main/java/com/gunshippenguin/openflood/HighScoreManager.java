@@ -10,11 +10,7 @@ public class HighScoreManager {
     }
 
     public boolean isHighScore(int boardSize, int numColors, int steps) {
-        if (!highScoreExists(boardSize, numColors)) {
-            return true;
-        } else {
-            return sp.getInt(getKey(boardSize, numColors), -1) > steps;
-        }
+        return !highScoreExists(boardSize, numColors) || sp.getInt(getKey(boardSize, numColors), -1) > steps;
     }
 
     public boolean highScoreExists(int boardSize, int numColors) {
