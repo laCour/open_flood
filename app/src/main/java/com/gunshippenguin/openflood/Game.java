@@ -88,8 +88,8 @@ public class Game {
             return;
         }
 
-        Queue<BoardPoint> queue = new LinkedList<BoardPoint>();
-        ArrayList<BoardPoint> processed = new ArrayList<BoardPoint>();
+        Queue<BoardPoint> queue = new LinkedList<>();
+        ArrayList<BoardPoint> processed = new ArrayList<>();
 
         queue.add(new BoardPoint(0, 0));
 
